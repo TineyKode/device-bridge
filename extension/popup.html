@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Device Bridge</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div>
+      <strong>Device Bridge</strong>
+      <p id="status">Connecting…</p>
+    </div>
+    <button id="settings-toggle" type="button">Setup</button>
+  </header>
+
+  <section id="settings">
+    <label>Relay URL
+      <input id="relay-url" type="url" spellcheck="false" placeholder="http://127.0.0.1:8787">
+    </label>
+    <label>Shared code
+      <input id="code" type="text" autocomplete="off" spellcheck="false" placeholder="At least 8 characters">
+    </label>
+    <div class="row">
+      <button id="generate" type="button">Generate code</button>
+      <button id="copy-code" type="button">Copy code</button>
+    </div>
+    <label>This device
+      <input id="device-name" type="text" maxlength="40" placeholder="Mac">
+    </label>
+    <button id="save" class="primary" type="button">Save and connect</button>
+    <p class="hint">Use the same code on every browser. On the other computer, set the relay URL to this machine's address, for example http://192.168.1.20:8787.</p>
+  </section>
+
+  <section id="composer">
+    <p id="peers"></p>
+    <textarea id="text" rows="4" placeholder="Text to send. Cmd or Ctrl + Enter sends it."></textarea>
+    <div class="row">
+      <button id="send-text" class="primary" type="button">Send text</button>
+      <button id="send-clip" type="button">Send clipboard</button>
+    </div>
+    <label class="file">Files
+      <input id="files" type="file" multiple>
+    </label>
+    <button id="send-files" type="button">Send files</button>
+    <p id="progress"></p>
+  </section>
+
+  <section>
+    <h2>Received</h2>
+    <ul id="inbox"></ul>
+  </section>
+
+  <script src="crypto.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

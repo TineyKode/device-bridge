@@ -1,0 +1,15 @@
+{
+  "name": "device-bridge-relay",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "ws": "^8.18.3"
+  }
+}

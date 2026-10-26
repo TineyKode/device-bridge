@@ -1,0 +1,138 @@
+:root {
+  color-scheme: dark;
+  --bg: #12141a;
+  --card: #1c1f28;
+  --line: #2c3140;
+  --text: #f3f5f8;
+  --muted: #9aa3b5;
+  --accent: #7aa2ff;
+  --accent-ink: #0d1324;
+  --ok: #5dcaa5;
+  --danger: #ff8f8f;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  width: 360px;
+  max-height: 580px;
+  margin: 0;
+  padding: 14px;
+  overflow: auto;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.4 "Segoe UI", sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+header strong { font-size: 15px; }
+
+#status, .hint, #peers, #progress {
+  margin: 2px 0 0;
+  color: var(--muted);
+}
+
+h2 {
+  margin: 16px 0 8px;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+section {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  display: grid;
+  gap: 4px;
+  color: var(--muted);
+}
+
+input, textarea, button {
+  font: inherit;
+  color: var(--text);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+}
+
+textarea { resize: vertical; min-height: 72px; }
+
+button {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  cursor: pointer;
+}
+
+button.primary {
+  border-color: transparent;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 650;
+}
+
+button:disabled { opacity: 0.55; cursor: default; }
+
+.row { display: flex; gap: 8px; }
+
+.row button, #send-files, #save { flex: 1; }
+
+#settings[hidden] { display: none; }
+
+#status.ok { color: var(--ok); }
+#status.bad, #progress.bad { color: var(--danger); }
+
+#inbox {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+#inbox li {
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+}
+
+.item-top, .item-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+
+.meta { color: var(--muted); font-size: 12px; }
+
+.preview {
+  margin: 8px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.empty {
+  padding: 12px;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  color: var(--muted);
+}
